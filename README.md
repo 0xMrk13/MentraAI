@@ -26,7 +26,7 @@ MentraAI turns Discord into a gamified cybersecurity learning arena with quizzes
 </p>
 
 <p align="center">
-  <img src="assets/img/mentra.gif" width="85%">
+  <img src="assets/img/logo.gif" width="85%">
 </p>
 
 <p align="center">
