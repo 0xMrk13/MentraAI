@@ -1,0 +1,70 @@
+{% extends "base.html" %}
+{% block title %}Mentrascan · Mentra{% endblock %}
+
+{% block head_css %}
+<link rel="stylesheet" href="/static/css/mentrascan.css?v=9">
+{% endblock %}
+
+{% block content %}
+<div class="container py-5">
+
+  <div class="lb-header">
+    <h1 class="lb-title">Mentrascan</h1>
+    <div class="lb-subtext">Paste notes or upload a text-based PDF to generate a clean 7-day plan.</div>
+  </div>
+
+  <div class="row g-4 align-items-start">
+
+    <!-- LEFT: input -->
+    <div class="col-12 col-lg-5">
+      <div class="ts-input">
+        <div class="ts-textwrap">
+          <textarea id="tsText"
+                    class="form-control ts-textarea"
+                    rows="4"
+                    placeholder="Paste your notes here or upload a PDF…"></textarea>
+
+          <div class="ts-tools">
+            <button id="tsUploadPdf"
+                    class="ts-toolbtn ts-attach"
+                    type="button"
+                    aria-label="Upload PDF"
+                    title="Upload PDF">+</button>
+
+            <button id="tsGenerate"
+                    class="ts-toolbtn ts-send"
+                    type="button"
+                    aria-label="Generate plan"
+                    title="Generate plan">
+              <svg viewBox="0 0 20 20" aria-hidden="true">
+                <path d="M10 3l6 6M10 3L4 9"
+                      fill="none" stroke="currentColor" stroke-width="2.2"
+                      stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M10 3v14"
+                      fill="none" stroke="currentColor" stroke-width="2.2"
+                      stroke-linecap="round"/>
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <input id="tsFile" type="file" accept="application/pdf" hidden>
+      </div>
+    </div>
+
+    <!-- RIGHT: output -->
+    <div class="col-12 col-lg-7">
+      <div class="ts-output">
+        <div id="tsOutput" class="ts-result">
+          <div class="ts-empty">Your plan will appear here.</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+{% endblock %}
+
+{% block body_js %}
+<script src="/static/js/mentrascan.js?v=9" defer></script>
+{% endblock %}

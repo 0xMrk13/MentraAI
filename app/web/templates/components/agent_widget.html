@@ -1,0 +1,37 @@
+<!-- Agent widget CSS -->
+<link rel="stylesheet" href="/static/css/agent.css">
+
+<!-- Floating launcher -->
+<button id="agentLauncher" class="agent-launcher" type="button" aria-label="Open chat">
+  <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+    <path d="M21 15a4 4 0 0 1-4 4H8l-5 4V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4z"/>
+  </svg>
+  <span>Chat</span>
+</button>
+
+<!-- Panel -->
+<section id="agentPanel" class="agent-panel" aria-label="Mentra Agent">
+  <div class="agent-close">
+    <button id="agentCloseBtn" type="button" aria-label="Close chat">✕</button>
+  </div>
+
+  <div id="agentBody" class="agent-body">
+    <div class="agent-msg">
+      <div class="agent-bubble">
+        Ask me
+      </div>
+    </div>
+    <div class="agent-hint">Enter to send • Shift+Enter for new line</div>
+  </div>
+
+  <div class="agent-footer">
+    <div class="agent-footer-actions">
+      <button id="agentResetBtn" class="btn-reset-mini" type="button" title="Reset chat">Reset</button>
+    </div>
+
+    <div class="agent-input-row">
+      <textarea id="agentInput" class="agent-input" rows="1" placeholder="Message the agent..."></textarea>
+      <button id="agentSendBtn" class="agent-send" type="button">Send</button>
+    </div>
+  </div>
+</section>

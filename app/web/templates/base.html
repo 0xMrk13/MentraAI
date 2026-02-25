@@ -1,0 +1,110 @@
+<!-- templates/base.html -->
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% block title %}MentraAI{% endblock %}</title>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="/static/img/logo.svg">
+
+  <!-- Bootstrap 5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Font -->
+  <link href="https://api.fontshare.com/v2/css?f[]=general-sans@400,500,600,700,800&display=swap" rel="stylesheet">
+
+  <!-- App CSS -->
+  <link rel="stylesheet" href="/static/css/theme.css">
+  <link rel="stylesheet" href="/static/css/agent.css">
+  {% block head_css %}{% endblock %}
+</head>
+<body>
+
+<nav class="app-navbar navbar navbar-expand-lg">
+  <div class="container-fluid px-3">
+    <a class="navbar-brand brand" href="/">
+      <img class="brand-logo" src="/static/img/logo.svg" alt="MentraAI">
+      <span class="brand-title">MentraAI</span>
+    </a>
+
+    <!-- Left nav: Leaderboard /  -->
+    <div class="navbar-nav ms-3 d-none d-lg-flex nav-links">
+      {% set p = request.url.path %}
+      <a class="nav-link {% if p == '/' %}active{% endif %}" href="/">Leaderboard</a>
+      <a class="nav-link {% if p.startswith('/mentrascan') %}active{% endif %}" href="/mentrascan">MentraScan</a>
+    </div>
+
+    <div class="ms-auto nav-actions">
+      {% if user %}
+        {% set uid = user.id|int %}
+        {% set av = user.avatar %}
+        {% set discrim = (uid % 5) %}
+        {% if av %}
+          {% set nav_avatar_url = "https://cdn.discordapp.com/avatars/" ~ uid ~ "/" ~ av ~ ".png?size=96" %}
+        {% else %}
+          {% set nav_avatar_url = "https://cdn.discordapp.com/embed/avatars/" ~ discrim ~ ".png" %}
+        {% endif %}
+
+        <div class="dropdown">
+          <button class="avatar-btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+            <img class="avatar" src="{{ nav_avatar_url }}" alt="{{ user.global_name or user.username }}">
+            <svg class="caret" viewBox="0 0 12 12" aria-hidden="true">
+              <path fill="currentColor" d="M3 4.5l3 3 3-3z"/>
+            </svg>
+          </button>
+
+          <ul class="dropdown-menu dropdown-menu-end mt-2 dd-minw">
+            <li><a class="dropdown-item" href="/me">My profile</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="/logout?next=/">Sign out</a></li>
+          </ul>
+        </div>
+      {% else %}
+        {% set next_url = _next if _next is defined and _next else request.url.path %}
+        <a class="discord-btn" href="/login?next={{ next_url | urlencode }}">
+          <svg class="discord-icon" viewBox="0 0 127.14 96.36" aria-hidden="true">
+            <path fill="currentColor" d="M107.7,8.07A105.15,105.15,0,0,0,81.47,0a72.06,72.06,0,0,0-3.36,6.83
+            A97.68,97.68,0,0,0,49,6.83,72.37,72.37,0,0,0,45.64,0,105.89,105.89,0,0,0,19.39,8.09
+            C2.79,32.65-1.71,56.6.54,80.21a105.73,105.73,0,0,0,32.17,16.15,77.7,77.7,0,0,0,6.89-11.16
+            a68.42,68.42,0,0,1-10.86-5.18c.91-.67,1.8-1.38,2.66-2.12,20.94,9.58,43.63,9.58,64.33,0
+            .87.74,1.76,1.45,2.66,2.12a68.68,68.68,0,0,1-10.87,5.19,77,77,0,0,0,6.89,11.15
+            A105.25,105.25,0,0,0,126.6,80.22C129.24,52.84,122.09,29.11,107.7,8.07ZM42.45,65.69
+            c-6.27,0-11.42-5.72-11.42-12.75S36.07,40.2,42.45,40.2c6.44,0,11.52,5.78,11.42,12.74
+            C53.87,60,48.83,65.69,42.45,65.69Zm42.24,0c-6.27,0-11.42-5.72-11.42-12.75
+            s5-12.74,11.42-12.74c6.44,0,11.52,5.78,11.42,12.74
+            C96.11,60,91.07,65.69,84.69,65.69Z"/>
+          </svg>
+          Login
+        </a>
+      {% endif %}
+    </div>
+  </div>
+</nav>
+
+<div class="page-bg">
+  <div class="gridBackground" aria-hidden="true">
+    <div class="trail trailH trailH1"></div>
+    <div class="trail trailH trailH2"></div>
+    <div class="trail trailH trailH3"></div>
+    <div class="trail trailV trailV1"></div>
+    <div class="trail trailV trailV2"></div>
+    <div class="trail trailV trailV3"></div>
+  </div>
+
+  <main class="app-shell page-content">
+    {% block content %}{% endblock %}
+  </main>
+</div>
+
+<footer> Mentra · Leaderboard</footer>
+
+{% include "partials/mentra_widget.html" %}
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+{% block body_js %}{% endblock %}
+<script src="/static/js/agent.js" defer></script>
+
+</body>
+</html>

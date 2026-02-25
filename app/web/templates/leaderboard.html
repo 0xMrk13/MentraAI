@@ -1,0 +1,77 @@
+{# leaderboard.html #}
+{% extends "base.html" %}
+
+{% block title %}Leaderboard · MentraAI{% endblock %}
+
+{% block head_css %}
+  <link rel="stylesheet" href="/static/css/leaderboard.css">
+{% endblock %}
+
+{% block content %}
+  <div class="lb-content">
+    <div class="lb-header">
+      <h1 class="lb-title">Leaderboard</h1>
+
+      {% if not user %}
+        <div class="lb-subtext">
+          <a href="/login" class="lb-login-link">Login with Discord</a> to join the leaderboard<br>
+          and track your progress.
+        </div>
+      {% endif %}
+    </div>
+
+    <div class="podium d-none" id="podium">
+      <div class="podium-card p2 rank-2" id="pod2"></div>
+      <div class="podium-card p1 rank-1" id="pod1"></div>
+      <div class="podium-card p3 rank-3" id="pod3"></div>
+    </div>
+
+    <div class="surface" id="lbSurface">
+      <div id="lbSkeleton" class="skeleton">
+        {% for _ in range(limit) %}
+          <div class="srow">
+            <div class="sbox w-40"></div>
+            <div class="sbox w-260"></div>
+            <div class="sbox w-140"></div>
+            <div class="sbox w-90"></div>
+            <div class="sbox w-90"></div>
+          </div>
+        {% endfor %}
+      </div>
+
+      <div class="table-responsive">
+        <table class="table table-hover table-clean align-middle d-none" id="lbTable">
+          <thead>
+            <tr>
+              <th scope="col" class="col-rank">Rank</th>
+              <th scope="col">Username</th>
+              <th scope="col" class="col-points">Points</th>
+              <th scope="col" class="col-acc">Accuracy</th>
+              <th scope="col" class="col-quiz">Quizzes</th>
+            </tr>
+          </thead>
+
+          <tbody id="lbBody"></tbody>
+          <tbody id="lbMeLabel" class="lb-me-label d-none">
+            <tr><td colspan="5">Your position</td></tr>
+          </tbody>
+          <tbody id="lbMeTbody" class="lb-me-tbody d-none"></tbody>
+        </table>
+      </div>
+
+      <nav class="pager" aria-label="Leaderboard pagination">
+        <ul class="pagination" id="lbPager"></ul>
+      </nav>
+    </div>
+  </div>
+{% endblock %}
+
+{% block body_js %}
+  <div id="lbDefaults"
+       data-days="{{ days|int }}"
+       data-limit="{{ limit|int }}"
+       data-current-username="{{ user.username if user and user.username is defined else '' }}">
+  </div>
+
+  <script src="/static/js/leaderboard.js"></script>
+{% endblock %}
