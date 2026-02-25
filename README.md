@@ -30,7 +30,7 @@ MentraAI turns Discord into a gamified cybersecurity learning arena with quizzes
 </p>
 
 <p align="center">
-  <a href="https://www.youtube.com/watch?v=AT6crSpQN88" target="_blank">
+  <a href="https://youtu.be/9EXSuRsbUfM" target="_blank">
     <img src="https://img.shields.io/badge/🎬%20Watch%20Full%20Product%20Walkthrough-YouTube-FF0000?style=for-the-badge&logo=youtube&logoColor=white" />
   </a>
 </p>
@@ -541,11 +541,10 @@ MENTRA-STUDY-BOT/
 
 <a id="security"></a>
 ## 🔐 Security
-
 If you discover a vulnerability, please refer to the [Security Policy](SECURITY.md).
+
 ## 🎬 Demo
-- Full walkthrough: [(YouTube link)](https://www.youtube.com/watch?v=AT6crSpQN88)
-- Screenshots: see `/assets/screens/`
+- Full walkthrough: [(YouTube link)](https://youtu.be/9EXSuRsbUfM)
 
 <a id="license"></a>
 ## 📜 License
