@@ -544,7 +544,7 @@ MENTRA-STUDY-BOT/
 
 If you discover a vulnerability, please refer to the [Security Policy](SECURITY.md).
 ## 🎬 Demo
-- Full walkthrough: (YouTube link)
+- Full walkthrough: [(YouTube link)](https://www.youtube.com/watch?v=AT6crSpQN88)
 - Screenshots: see `/assets/screens/`
 
 <a id="license"></a>
