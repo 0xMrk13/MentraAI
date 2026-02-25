@@ -30,7 +30,7 @@ MentraAI turns Discord into a gamified cybersecurity learning arena with quizzes
 </p>
 
 <p align="center">
-  <a href="https://youtu.be/9EXSuRsbUfM" target="_blank">
+  <a href="https://www.youtube.com/watch?v=z6yusgzDXu4" target="_blank">
     <img src="https://img.shields.io/badge/🎬%20Watch%20Full%20Product%20Walkthrough-YouTube-FF0000?style=for-the-badge&logo=youtube&logoColor=white" />
   </a>
 </p>
@@ -392,15 +392,19 @@ Scopes:
 MentraAI does not require Administrator permissions.
 
 ##  Create Environment Variables
+
 Check the env.example or create your own in the root directory 
 
 DISCORD_TOKEN=your_discord_bot_token
+
 DISCORD_CLIENT_ID=your_discord_client_id
+
 DISCORD_CLIENT_SECRET=your_discord_client_secret
 
 GROQ_API_KEY=your_groq_api_key
 
 DATABASE_URL=sqlite:///./mentra.db
+
 SECRET_KEY=your_super_secret_key
 
 ⚠️ You must insert your own Groq API key.
@@ -544,7 +548,7 @@ MENTRA-STUDY-BOT/
 If you discover a vulnerability, please refer to the [Security Policy](SECURITY.md).
 
 ## 🎬 Demo
-- Full walkthrough: [(YouTube link)](https://youtu.be/9EXSuRsbUfM)
+- Full walkthrough: [(YouTube link)](https://www.youtube.com/watch?v=z6yusgzDXu4)
 
 <a id="license"></a>
 ## 📜 License
