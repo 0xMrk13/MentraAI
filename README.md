@@ -353,8 +353,8 @@ Both layers are fully synchronized.
 ## Clone the Repository
 
 ```bash
-git clone https://github.com/yourusername/mentraai.git
-cd mentraai
+git clone https://github.com/0xMrk13/MentraAI
+cd MentraAI
 ```
 
 ## 🔐 Discord Default Install Settings
