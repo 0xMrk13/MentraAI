@@ -373,7 +373,6 @@ Add your callback URL (e.g. http://127.0.0.1:8000/auth/callback)
 
 Invite the bot to your server
 
-⚠️ You must insert your own Groq API key.
 
 ### User Install
 Scope:
