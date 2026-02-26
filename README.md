@@ -52,7 +52,7 @@ MentraAI turns Discord into a gamified cybersecurity learning arena with quizzes
 
 > [!NOTE]  
 > Built for the **OffSec Community Challenge (MCPs)**: practical, useful, a real learning workflow for the community.  
->  
+>  Everithing is FREE 
 > Community members are welcome to review the project and leave feedback in the art-gallery channel on the official OffSec Discord.
 
 <a id="why"></a>
@@ -408,7 +408,7 @@ DATABASE_URL=sqlite:///./mentra.db
 SECRET_KEY=your_super_secret_key
 
 ⚠️ You must insert your own Groq API key.
-You can generate one at: https://console.groq.com/
+You can generate one for FREE at: https://console.groq.com/
 
 
 ## Install Dependencies
