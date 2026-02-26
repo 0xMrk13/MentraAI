@@ -52,7 +52,7 @@ MentraAI turns Discord into a gamified cybersecurity learning arena with quizzes
 
 > [!NOTE]  
 > Built for the **OffSec Community Challenge (MCPs)**: practical, useful, a real learning workflow for the community.  
->  Everithing is FREE
+>  Everything is FREE
 > 
 > Community members are welcome to review the project and leave feedback in the art-gallery channel on the official OffSec Discord.
 
